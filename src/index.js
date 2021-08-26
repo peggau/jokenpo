@@ -6,8 +6,13 @@
 // })
 
 const options = require('./data');
-const machineOptions = require('./controller/class');
+const user = require('./controller/class/user')
+// const machineOptions = require('./controller/class/machine');
 
-let sortition = new machineOptions({opt: options}).sort()
+let users = new user({
+    opt: options, 
+    name: 'Gi', 
+    selected: 'Paper'
+}).game()
 
-console.log(sortition)
+console.log(users)

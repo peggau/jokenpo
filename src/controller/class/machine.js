@@ -4,8 +4,8 @@ class machineOptions {
     }
 
     sort(){
-        const sortOpt = Math.floor() * 3 - 0
-        return sortOpt
+        const sortOpt = Math.floor(Math.random() * 3 - 0)
+        return this._opt[sortOpt].name
     }
 
     set opt(option) {
