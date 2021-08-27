@@ -30,9 +30,9 @@ class user extends machineOptions {
         if(this._selected === this._sort) {
             return `${this._name}, it's a tie! --> user: ${this._selected} | machine: ${this._sort}.`
         } else if((this._selected === 'Rock' && this._sort === 'Scissor') || (this._selected === 'Scissor' && this._sort === 'Paper') || (this._selected === 'Paper' && this._sort === 'Rock')) {
-            return `${this._name}, you won! --> user: ${this._selected} | machine: ${this._sort}.`
+            return `you chose ${this._selected} | The machine chose ${this._sort}... ${this._name}, you won!`
         } else {
-            return `${this._name}, you lost! --> user: ${this._selected} | machine: ${this._sort}.`
+            return `you chose ${this._selected} | The machine chose ${this._sort}... ${this._name}, you lose!`
         }
     }
 
@@ -52,7 +52,9 @@ class user extends machineOptions {
                     choices: options
                 }
             ]).then((answers) => {
-                
+                this._name = answers.name
+                this._selected = answers.jokenpo
+                console.info(`Hey, ${this.logic()}`)
             })
     }
 }
